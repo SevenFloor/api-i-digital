@@ -1,0 +1,17 @@
+{
+  "name": "sevenfloor/api-i-digital",
+  "authors": [
+    {
+      "name": "Ignatenkov Nikita",
+      "email": "Ignatenkov.N@gmail.com"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "sevenfloor\\apiidigital\\": "src"
+    }
+  }
+}
