@@ -56,7 +56,7 @@ class Client
             'body' => $body->getBody(),
             'nodeId' => $this->node_id,
             'requestDelivery' => $requestDelivery,
-            'expirationDate' => strtotime($expirationDate)
+            'expirationDate' => strtotime($expirationDate) * 1000
         ];
 
         return $this->_send('/message', $message);
