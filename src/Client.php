@@ -60,7 +60,6 @@ class Client
         ];
 
         return $this->_send('/message', $message);
-
     }
 
     /**
