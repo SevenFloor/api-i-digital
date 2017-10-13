@@ -48,7 +48,7 @@ class Client
      * @internal param int $expirationDate
      * @return Response
      */
-    public function message(Body $body, $source, $destination, $requestDelivery = true, $expirationDate = 1502807357000)
+    public function message(Body $body, $source, $destination, $requestDelivery = true, $expirationDate = '+1 day')
     {
         $message = [
             '@type' => 'outbound',
@@ -56,7 +56,7 @@ class Client
             'body' => $body->getBody(),
             'nodeId' => $this->node_id,
             'requestDelivery' => $requestDelivery,
-            'expirationDate' => $expirationDate
+            'expirationDate' => strtotime($expirationDate)
         ];
 
         return $this->_send('/message', $message);
