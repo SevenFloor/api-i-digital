@@ -11,10 +11,13 @@ class Client
 {
 
     /**
+     * Идентификатор ноды
      * @var
      */
     public $node_id;
+
     /**
+     * Пароль
      * @var
      */
     public $password;
@@ -23,6 +26,7 @@ class Client
     public $_client;
 
     /**
+     * Адрес сервера
      * @var string
      */
     public $base_uri;
@@ -31,11 +35,10 @@ class Client
     /**
      * Client constructor.
      */
-    public function __construct()
+    public function __construct($base_uri)
     {
-        $this->_client = new \GuzzleHttp\Client(['base_uri' => $this->base_uri]);
+        $this->_client = new \GuzzleHttp\Client(['base_uri' => $base_uri]);
     }
-
 
     /**
      * @param Body $body
@@ -56,7 +59,7 @@ class Client
             'expirationDate' => $expirationDate
         ];
 
-        return $this->_send('message', $message);
+        return $this->_send('/message', $message);
 
     }
 
@@ -68,10 +71,12 @@ class Client
     }
 
     /**
-     *
+     * @param int $count_receive Кол-во получаемых статусов
+     * @return Response
      */
-    public function receive()
+    public function receive($count_receive = 5)
     {
+        return $this->_send('/receive', $count_receive);
     }
 
     /**
@@ -84,14 +89,13 @@ class Client
     {
         $credentials = base64_encode($this->node_id . ':' . $this->password);
 
-        $response = $this->_client->post($path, [
+        $response = $this->_client->request('POST', $path, [
             'json' => $body,
             'headers' => [
                 'Authorization' => 'Basic ' . $credentials,
             ]
         ]);
 
-        return new Response($response);
+        return new Response($response->getBody()->getContents());
     }
-
 }

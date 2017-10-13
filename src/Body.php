@@ -21,50 +21,83 @@ namespace sevenfloor\apiidigital;
  * Class Content
  * @package sevenfloor\apiidigital
  */
+/**
+ * Class Body
+ * @package sevenfloor\apiidigital
+ */
+/**
+ * Class Body
+ * @package sevenfloor\apiidigital
+ */
 class Body
 {
 
 
     /**
-     *
+     * Тип сообщения Текст
      */
     const TYPE_TEXT = 'text';
     /**
-     *
+     * тип сообщения Viber
      */
     const TYPE_VIBER = 'viber';
 
+    /**
+     * Тип содержимого image
+     */
     const CONTENT_TYPE_IMAGE = 'image';
+
+    /**
+     * Тип содержимого button
+     */
     const CONTENT_TYPE_BUTTON = 'button';
 
     /**
+     * Тип для отправки text|viber
      * @var
      */
     public $bodyType;
 
     /**
+     * Текст сообщения
      * @var
      */
     public $text;
+
     /**
+     * Тип содержимого image|button
      * @var string
      */
     public $content_type;
 
     /**
+     * Наименование кнопки (надпись на кнопке)
      * @var
      */
     public $caption;
+
     /**
+     * URL страницы, на которую будет отправлен абонент при нажатии на кнопку
      * @var
      */
     public $action;
+
     /**
+     * URL изображения
      * @var
      */
     public $imageUrl;
 
 
+    /**
+     * Body constructor.
+     * @param $bodyType
+     * @param $text
+     * @param null $content_type
+     * @param null $caption
+     * @param null $action
+     * @param null $imageUrl
+     */
     public function __construct($bodyType, $text, $content_type = null, $caption = null, $action = null, $imageUrl = null)
     {
         $this->bodyType = $bodyType;
@@ -75,6 +108,10 @@ class Body
         $this->imageUrl = $imageUrl;
     }
 
+    /**
+     * @return array
+     * @throws \Exception
+     */
     public function getBody()
     {
         if ($this->bodyType == self::TYPE_TEXT) {
