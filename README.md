@@ -1,7 +1,7 @@
 # Client Api for send message Text|Viber
 
 
-[![Latest Stable Version](https://poser.pugx.org/ignatenkovnikita/yii2-digitaldirect-ivr/v/stable)](https://packagist.org/packages/sevenfloor/api-i-digital) [![Total Downloads](https://poser.pugx.org/sevenfloor/api-i-digital/downloads)](https://packagist.org/packages/sevenfloor/api-i-digital) [![Latest Unstable Version](https://poser.pugx.org/sevenfloor/api-i-digital/v/unstable)](https://packagist.org/packages/sevenfloor/api-i-digital) [![License](https://poser.pugx.org/sevenfloor/api-i-digital/license)](https://packagist.org/packages/sevenfloor/api-i-digital)
+[![Latest Stable Version](https://poser.pugx.org/sevenfloor/api-i-digital/v/stable)](https://packagist.org/packages/sevenfloor/api-i-digital) [![Total Downloads](https://poser.pugx.org/sevenfloor/api-i-digital/downloads)](https://packagist.org/packages/sevenfloor/api-i-digital) [![Latest Unstable Version](https://poser.pugx.org/sevenfloor/api-i-digital/v/unstable)](https://packagist.org/packages/sevenfloor/api-i-digital) [![License](https://poser.pugx.org/sevenfloor/api-i-digital/license)](https://packagist.org/packages/sevenfloor/api-i-digital)
 
 Installation
 ------------
